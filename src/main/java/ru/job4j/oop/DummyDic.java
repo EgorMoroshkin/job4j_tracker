@@ -9,6 +9,6 @@ public class DummyDic {
     public static void main(String[] args) {
         DummyDic jim = new DummyDic();
         String fullPhrase = jim.engToRus("eng");
-        System.out.println(fullPhrase);
+        System.out.print(fullPhrase);
     }
 }
