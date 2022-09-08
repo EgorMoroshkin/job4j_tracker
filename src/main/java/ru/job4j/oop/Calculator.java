@@ -12,31 +12,29 @@ public class Calculator {
     }
 
     public static int minus(int a) {
-        return x - a;
+        return a - x;
     }
 
-    public  int divide(int a) {
+    public int divide(int a) {
         return a / x;
     }
 
-    public  int sumAllOperation(int a) {
+    public int sumAllOperation(int a) {
         return sum(a) + multiply(a) + minus(a) + divide(a);
     }
 
     public static void main(String[] args) {
         int rslSum = Calculator.sum(10);
         System.out.println(rslSum);
-        Calculator calculatorMultiply = new Calculator();
-        int rslMultiply = calculatorMultiply.multiply(5);
+        Calculator calculator = new Calculator();
+        int rslMultiply = calculator.multiply(5);
         System.out.println(rslMultiply);
         int rslMinus = minus(10);
         System.out.println(rslMinus);
-        Calculator calculatorDivide = new Calculator();
-        int rslDivide = calculatorDivide.divide(10);
+        int rslDivide = calculator.divide(10);
         System.out.println(rslDivide);
         System.out.println();
-        Calculator calculatorSumAllOperation = new Calculator();
-        int rslSumAllOperation = calculatorSumAllOperation.sumAllOperation(20);
+        int rslSumAllOperation = calculator.sumAllOperation(20);
         System.out.println(rslSumAllOperation);
     }
 }
