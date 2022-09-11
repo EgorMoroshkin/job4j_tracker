@@ -8,7 +8,7 @@ public class College {
         student.setFullName("Морошкин Егор Владимирович");
         student.setGroupNumber(3547);
         student.setDataHit(new Date(1659818510000L));
-        System.out.println("Student - " + student.getFullName() + "\n" + "Группа - " + student.getGroupNumber()
-                + "\n" + "Дата поступления - " + student.getDataHit());
+        System.out.println("Student - " + student.getFullName() + System.lineSeparator() + "Группа - " + student.getGroupNumber()
+                + System.lineSeparator() + "Дата поступления - " + student.getDataHit());
     }
 }
