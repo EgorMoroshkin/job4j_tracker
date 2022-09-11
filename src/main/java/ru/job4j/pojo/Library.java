@@ -21,7 +21,7 @@ public class Library {
         }
         System.out.println();
         for (Book bk : books) {
-            if (bk.getNameBook().equals("Clean code")) {
+            if ("Clean code".equals(bk.getNameBook())) {
                 System.out.println("Имя:" + bk.getNameBook() + "; количество страниц: " + bk.getCountPage());
             }
         }
