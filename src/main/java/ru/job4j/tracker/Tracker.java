@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class Tracker {
     private final Item[] items = new Item[100];
-    private Item[] rsl = new Item[items.length];
     private int ids = 1;
     private int size = 0;
 
@@ -20,28 +19,17 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        int count = 0;
-        Item[] rsl = new Item[items.length];
-        for (Item item : items) {
-            if (item != null) {
-                rsl[count] = item;
-                count++;
-            }
-        }
-        return Arrays.copyOf(rsl, size);
+        return Arrays.copyOf(items, size);
     }
 
     public Item[] findByName(String key) {
         Item[] rsl = new Item[size];
         int count = 0;
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] == null) {
-                break;
-            } else if (key.equals(items[i].getName())) {
+        for (int i = 0; i < size; i++) {
+            if (key.equals(items[i].getName())) {
                 rsl[count] = items[i];
                 count++;
             }
-
         }
         return Arrays.copyOf(rsl, count);
     }
