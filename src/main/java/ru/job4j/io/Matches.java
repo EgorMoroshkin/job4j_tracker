@@ -14,7 +14,13 @@ public class Matches {
             int matches = Integer.parseInt(input.nextLine());
             turn = !turn;
             if (matches > 0 && matches <= 3) {
-                count -= matches;
+                if (matches > count) {
+                    System.out.println("Количество спичек на столе меньше введеного числа");
+                    turn = !turn;
+                } else {
+                    count -= matches;
+                    System.out.println("Количество спичек оставшихся на столе: " + count);
+                }
             } else {
                 System.out.println("Введено неверное число!");
                 turn = !turn;
