@@ -17,10 +17,9 @@ public class MagicBall {
             case 1:
                 answerClient = "Нет";
                 break;
-            case 2:
+            default:
                 answerClient = "Может быть";
                 break;
-            default:
         }
         System.out.println(answerClient);
     }
