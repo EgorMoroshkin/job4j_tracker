@@ -1,9 +1,9 @@
 package ru.job4j.poly;
 
 public class Bus implements Transport {
-    int countPassengers = 0;
-    int countFuel = 0;
-    int price = 90;
+    private int countPassengers = 0;
+    private int countFuel = 0;
+    private int price = 90;
 
     @Override
     public void drive() {
