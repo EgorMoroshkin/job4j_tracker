@@ -1,7 +1,6 @@
 package ru.job4j.tracker;
 
 public class StartUI {
-
     public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
@@ -25,7 +24,6 @@ public class StartUI {
                 }
             } else if (select == 2) {
                 System.out.println("=== Edit item ===");
-
                 int id = Integer.parseInt(input.askStr("Enter id: "));
                 String name = input.askStr("Enter name: ");
                 Item item = new Item(name);
