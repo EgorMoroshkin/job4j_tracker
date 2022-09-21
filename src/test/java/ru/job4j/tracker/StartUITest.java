@@ -69,7 +69,7 @@ public class StartUITest {
                         + "0. Show all Items" + ln
                         + "1. Exit" + ln
                         + "=== Show all items ===" + ln
-                        + one.toString() + ln
+                        + one + ln
                         + "Menu." + ln
                         + "0. Show all Items" + ln
                         + "1. Exit" + ln
@@ -95,7 +95,7 @@ public class StartUITest {
                         + "0. Find by Item id" + ln
                         + "1. Exit" + ln
                         + "=== Find item by id ===" + ln
-                        + one.toString() + ln
+                        + one + ln
                         + "Menu." + ln
                         + "0. Find by Item id" + ln
                         + "1. Exit" + ln
@@ -154,10 +154,11 @@ public class StartUITest {
         );
     }
 
-/**    @Test
+    @Test
     public void whenCreateItem() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
+        String newName = "Item name";
         Input in = new StubInput(
                 new String[]{"0", "Item name", "1"}
         );
@@ -166,16 +167,17 @@ public class StartUITest {
                 new ExitAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
+        Item[] one = tracker.findByName(newName);
         String ln = System.lineSeparator();
         assertThat(out.toString()).isEqualTo(
                 "Menu." + ln
                         + "0. Add new Item" + ln
                         + "1. Exit" + ln
                         + "=== Create a new Item ===" + ln
-                        + "Добавленная заявка: " + in + ln
+                        + "Добавленная заявка: " + one[0] + ln
                         + "Menu." + ln
                         + "0. Add new Item" + ln
                         + "1. Exit" + ln
         );
-    } */
+    }
 }
