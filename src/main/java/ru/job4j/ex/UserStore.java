@@ -4,17 +4,12 @@ public class UserStore {
     private static User user = null;
 
     public static User findUser(User[] users, String login) throws UserNotFoundException {
-        boolean notValid = true;
         for (User user : users) {
             if (login.equals(user.getUsername())) {
-                notValid = false;
                 return user;
             }
-            if (notValid) {
-                throw new UserNotFoundException("Пользователь не найден");
-            }
         }
-        return user;
+        throw new UserNotFoundException("Пользователь не найден");
     }
 
     public static boolean validate(User user) throws UserInvalidException {
