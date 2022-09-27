@@ -18,16 +18,16 @@ public class PasswordValidator {
         if (password.equals(password.toLowerCase())) {
             throw new IllegalArgumentException("Пароль должен содержать хотя бы один символ в верхнем регистре");
         }
-        for (int i = 0; i < array.length; i++) {
-            if (password.toLowerCase().contains(array[i])) {
+        for (String arr : array) {
+            if (password.toLowerCase().contains(arr)) {
                 throw new IllegalArgumentException("Пароль содержит подстроки без учета регистра: qwerty, 12345, password, admin, user.");
             }
         }
         char[] arrayChar = password.toCharArray();
         boolean num = true;
         boolean symbol = true;
-        for (int i = 0; i < arrayChar.length; i++) {
-            if (Character.isDigit(arrayChar[i])) {
+        for (char arr : arrayChar) {
+            if (Character.isDigit(arr)) {
                 num = false;
                 break;
             }
