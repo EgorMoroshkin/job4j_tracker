@@ -62,7 +62,7 @@ public class BankServiceTest {
         assertThat(bank.findByRequisite(user.getPassport(), "113").getBalance()).isEqualTo(200D);
     }
 
-    @Test
+    /**@Test
     public void transferMoneySourceNull() {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();
@@ -71,9 +71,9 @@ public class BankServiceTest {
         bank.addAccount(user.getPassport(), new Account("113", 50D));
         bank.transferMoney(user.getPassport(), "554", user.getPassport(), "113", 150D);
         assertThat(bank.findByRequisite(user.getPassport(), "5546").getBalance()).isEqualTo(150D);
-    }
+    } */
 
-   /** @Test()
+   @Test()
     public void transferMoneyDontHaveEnoughMoney() {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();
@@ -82,7 +82,7 @@ public class BankServiceTest {
         bank.addAccount(user.getPassport(), new Account("113", 50D));
         bank.transferMoney(user.getPassport(), "5546", user.getPassport(), "113", 300D);
         assertThat(bank.findByRequisite(user.getPassport(), "113").getBalance()).isEqualTo(50D);
-    } */
+    }
 
     @Test
     public void transferMoneyDestinationIsNull() {
