@@ -40,11 +40,11 @@ public class AnalyzeByMap {
         for (Pupil pup : pupils) {
             count++;
             for (Subject sub : pup.subjects()) {
-                Integer defaultScore = map.get(sub.name());
-                if (defaultScore == null) {
-                    map.put(sub.name(), sub.score());
+                int temp = map.getOrDefault(sub.name(), 0);
+                if (temp > 0) {
+                    map.put(sub.name(), sub.score() + temp);
                 } else {
-                    map.put(sub.name(), sub.score() + defaultScore);
+                    map.put(sub.name(), sub.score() + temp);
                 }
             }
         }
@@ -77,11 +77,11 @@ public class AnalyzeByMap {
         for (Pupil pup : pupils) {
             count++;
             for (Subject sub : pup.subjects()) {
-                Integer defaultScore = map.get(sub.name());
-                if (defaultScore == null) {
-                    map.put(sub.name(), sub.score());
+                int temp = map.getOrDefault(sub.name(), 0);
+                if (temp > 0) {
+                    map.put(sub.name(), sub.score() + temp);
                 } else {
-                    map.put(sub.name(), sub.score() + defaultScore);
+                    map.put(sub.name(), sub.score() + temp);
                 }
             }
         }
