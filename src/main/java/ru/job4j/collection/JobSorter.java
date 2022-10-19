@@ -16,7 +16,7 @@ public class JobSorter {
         System.out.println(jobs);
         System.out.println();
         System.out.println(jobs);
-        Collections.sort(jobs, new SortByNameJob());
+        Collections.sort(jobs, new SortAscByNameJob());
         System.out.println(jobs);
         System.out.println();
         System.out.println(jobs);
