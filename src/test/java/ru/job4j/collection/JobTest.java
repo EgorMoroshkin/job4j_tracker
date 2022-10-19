@@ -14,7 +14,7 @@ class JobTest {
     @Test
     public void whenAscSortByName() {
         List<Job> jobs = Arrays.asList(
-                new Job("fix bug", 32),
+                new Job("fix bug", 40),
                 new Job("send mail", 18),
                 new Job("add task", 56)
         );
