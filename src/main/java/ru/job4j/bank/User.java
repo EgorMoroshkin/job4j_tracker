@@ -2,6 +2,12 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс юзер, который имеет переменные паспорт и ФИО
+ * Объявлен конструктор класса, сеттеры и гетерры
+ * Переопределены методы сравнения для класса юзер
+ */
+
 public class User {
     private String passport;
     private String username;

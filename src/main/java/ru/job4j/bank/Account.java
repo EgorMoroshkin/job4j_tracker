@@ -2,6 +2,12 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс счет, который имеет переменные реквизиты и баланс
+ * Объявлен конструктор класса, сеттеры и гетерры
+ * Переопределены методы сравнения для класса счет
+ */
+
 public class Account {
     private String requisite;
     private double balance;
