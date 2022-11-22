@@ -42,28 +42,18 @@ public class Analyze {
                                 .stream()
                                 .mapToInt(t -> t.score())
                                 .sum()))
-                .max(new Comparator<Tuple>() {
-                    @Override
-                    public int compare(Tuple o1, Tuple o2) {
-                        return Double.compare(o1.score(), o2.score());
-                    }
-                })
+                .max(Comparator.comparingDouble(Tuple::score))
                 .orElse(null);
     }
 
     public static Tuple bestSubject(Stream<Pupil> stream) {
         return stream.flatMap(x -> x.subjects().stream())
-                .collect(Collectors.groupingBy(Subject::name, LinkedHashMap::new,
+                .collect(Collectors.groupingBy(Subject::name,
                         Collectors.summingDouble(Subject::score)))
                 .entrySet()
                 .stream()
                 .map(x -> new Tuple(x.getKey(), x.getValue()))
-                .max(new Comparator<Tuple>() {
-                    @Override
-                    public int compare(Tuple o1, Tuple o2) {
-                        return Double.compare(o1.score(), o2.score());
-                    }
-                })
+                .max(Comparator.comparingDouble(Tuple::score))
                 .orElse(null);
     }
 }
